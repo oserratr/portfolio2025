@@ -37,7 +37,6 @@
       white-space: pre;
     }
 
-    /* Style commun pour les projets */
     .project-link {
       color: white;
       text-decoration: none;
@@ -90,7 +89,7 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
   </style>
 </head>
@@ -107,11 +106,12 @@
 
       <!-- Liens de projets stylisés -->
       <p class="project-link project-block" data-image="/portfolio2025/img/roots.jpg">↗ roots</p>
-      <a href="https://delusionalsouvenirs.cc/" target="_blank" class="project-link project-block" data-image="/portfolio2025/img/delusional.jpg">↗ delusional souvenirs</a>
+      <a href="https://delusionalsouvenirs.cc/" target="_blank" class="project-link project-block" data-image="/portfolio2025/img/delusional.jpeg" data-ratio="portrait">↗ delusional souvenirs</a>
       <p class="project-link project-block" data-image="/portfolio2025/img/degrade.jpg">↗ degrade</p>
-      <p class="project-link project-block" data-image="/portfolio2025/img/savethegoblin.png">↗ save the goblin</p>
+      <p class="project-link project-block" data-image="/portfolio2025/img/savethegoblin.png" data-ratio="portrait">↗ save the goblin</p>
       <p class="project-link project-block" data-image="/portfolio2025/img/baterylow.jpg">↗ battery low</p>
-<br>
+      <br>
+
       <div class="socials">
         <a href="https://oceanesrt.itch.io/" target="_blank">itch.io</a>
         <a href="https://github.com/oserratr" target="_blank">github</a>
@@ -131,22 +131,32 @@
       navigator.clipboard.writeText("oceane.srt77@gmail.com");
     }
 
-    // Gestion de l'affichage de l'image
     const preview = document.getElementById('preview');
     const links = document.querySelectorAll('.project-link');
 
     links.forEach(link => {
       link.addEventListener('mouseenter', () => {
         const img = link.dataset.image;
+        const ratio = link.dataset.ratio;
+
         preview.style.backgroundImage = `url(${img})`;
         preview.style.opacity = 1;
+
+        // Changement du ratio si data-ratio="portrait"
+        if (ratio === "portrait") {
+          preview.style.width = "300px";
+          preview.style.height = "400px";
+        } else {
+          preview.style.width = "400px";
+          preview.style.height = "300px";
+        }
       });
+
       link.addEventListener('mouseleave', () => {
         preview.style.opacity = 0;
       });
     });
 
-    // Animation laser
     const canvas = document.getElementById('laserCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
