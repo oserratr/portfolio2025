@@ -1,200 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Jul 07 2025 13:17:18 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="672f370123ca1f0c1a6e39a8" data-wf-site="672f370123ca1f0c1a6e3978" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #111;
-      color: white;
-      font-family: 'Courier New', monospace;
-      overflow: hidden;
-    }
-
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      padding: 60px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .left-column {
-      max-width: 50%;
-    }
-
-    h1, p {
-      margin: 0 0 20px 0;
-      white-space: pre;
-    }
-
-    .project-link {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s ease;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    .project-link:hover {
-      color: #6aff00;
-      text-decoration: none;
-    }
-
-    .project-block {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 10px;
-    }
-
-    .socials a {
-      text-decoration: none;
-      color: white;
-      transition: color 0.2s ease;
-    }
-
-    .socials a:hover {
-      color: #aaf;
-    }
-
-    .email-button {
-      margin-top: 20px;
-      background: #666;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    #preview {
-      width: 400px;
-      height: 300px;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>Océane Serrat</title>
+  <meta content="I create playful experiences through video games and narrative design. My work uses design to raise awareness people around important topics." name="description">
+  <meta content="Océane Serrat" property="og:title">
+  <meta content="I create playful experiences through video games and narrative design. My work uses design to raise awareness people around important topics." property="og:description">
+  <meta content="Océane Serrat" property="twitter:title">
+  <meta content="I create playful experiences through video games and narrative design. My work uses design to raise awareness people around important topics." property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/oceane-personal-website.webflow.css" rel="stylesheet" type="text/css">
+  <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="add689e1-78c5-7a5c-83ff-e376a65e9c59"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="add689e1-78c5-7a5c-83ff-e376a65e9c5a"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="3c7ef942-ebed-6747-b5b1-d0c42c99148f"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="3c7ef942-ebed-6747-b5b1-d0c42c991490"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="01367841-8e15-248e-4bfe-e5d38b54a55b"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="01367841-8e15-248e-4bfe-e5d38b54a55c"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="4e011ce2-51c1-e15c-680e-9ef4e46208c7"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="4e011ce2-51c1-e15c-680e-9ef4e46208c8"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="0c7e09b8-f412-0a3e-27f4-17914e36c9ec"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="0c7e09b8-f412-0a3e-27f4-17914e36c9ed"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="f18e932f-5fef-5607-ea51-80066518f05f"] {-webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}html.w-mod-js:not(.w-mod-ix) [data-w-id="f18e932f-5fef-5607-ea51-80066518f060"] {-webkit-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-12px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}</style>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inter Tight:regular","Instrument Serif:regular,italic","Azeret Mono:regular"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
-<body>
-  <canvas id="laserCanvas"></canvas>
-
-  <div class="content">
-    <div class="left-column">
-      <h1>oceane serrat</h1>
-      <p>interactive & game designer</p>
-      <p>based in geneva</p>
-
-      <br><br>
-
-      <!-- Liens de projets stylisés -->
-      <p class="project-link project-block" data-image="/portfolio2025/img/roots.jpg">↗ roots</p>
-      <a href="https://delusionalsouvenirs.cc/" target="_blank" class="project-link project-block" data-image="/portfolio2025/img/delusional.jpeg" data-ratio="portrait">↗ delusional souvenirs</a>
-      <p class="project-link project-block" data-image="/portfolio2025/img/degrade.jpg">↗ degrade</p>
-      <p class="project-link project-block" data-image="/portfolio2025/img/savethegoblin.png" data-ratio="portrait">↗ save the goblin</p>
-      <p class="project-link project-block" data-image="/portfolio2025/img/baterylow.jpg">↗ battery low</p>
-      <br>
-
-      <div class="socials">
-        <a href="https://oceanesrt.itch.io/" target="_blank">itch.io</a>
-        <a href="https://github.com/oserratr" target="_blank">github</a>
-        <a href="https://www.linkedin.com/in/oceane-serrat/" target="_blank">linkedin</a>
-        <a href="/portfolio2025/about.html">about me</a>
+<body class="body-2">
+  <section id="about" class="section-3">
+    <div class="container occ">
+      <div class="about-content-block">
+        <div class="_12-column-grid">
+          <div id="w-node-_9fe2ebdb-d616-73a3-9999-e7420d5ba68c-1a6e39a8" class="about-content-wrapper">
+            <h1 class="heading-2 oc">oceane.serrat</h1>
+          </div>
+        </div>
       </div>
-
-      <button class="email-button" onclick="copyEmail()">copy email address</button>
     </div>
-
-    <!-- Aperçu image -->
-    <div id="preview"></div>
-  </div>
-
-  <script>
-    function copyEmail() {
-      navigator.clipboard.writeText("oceane.srt77@gmail.com");
-    }
-
-    const preview = document.getElementById('preview');
-    const links = document.querySelectorAll('.project-link');
-
-    links.forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        const img = link.dataset.image;
-        const ratio = link.dataset.ratio;
-
-        preview.style.backgroundImage = `url(${img})`;
-        preview.style.opacity = 1;
-
-        // Changement du ratio si data-ratio="portrait"
-        if (ratio === "portrait") {
-          preview.style.width = "300px";
-          preview.style.height = "400px";
-        } else {
-          preview.style.width = "400px";
-          preview.style.height = "300px";
-        }
-      });
-
-      link.addEventListener('mouseleave', () => {
-        preview.style.opacity = 0;
-      });
-    });
-
-    const canvas = document.getElementById('laserCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let points = [];
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-
-    document.addEventListener('mousemove', e => {
-      points.push({ x: e.clientX, y: e.clientY, alpha: 1.0 });
-    });
-
-    function animate() {
-      ctx.fillStyle = 'rgba(17, 17, 17, 0.1)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.beginPath();
-      for (let i = 0; i < points.length - 1; i++) {
-        const p1 = points[i];
-        const p2 = points[i + 1];
-        ctx.strokeStyle = `rgba(173, 255, 47, ${p1.alpha})`;
-        ctx.lineWidth = 2;
-        ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
-      }
-      ctx.stroke();
-
-      for (let p of points) p.alpha -= 0.015;
-      points = points.filter(p => p.alpha > 0);
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
+  </section>
+  <section id="about" class="section-3">
+    <div class="container abt">
+      <div class="about-content-block">
+        <div class="_12-column-grid">
+          <div id="w-node-_896428a5-82e4-4c10-af73-d01a20083110-1a6e39a8" class="about-content-wrapper">
+            <div class="fade-in-animation-block">
+              <h4 class="heading-3">About me</h4>
+              <div class="standard-text">I am oceane, interactive and game designer, based in Geneva. I create playful experiences through video games and narrative design. <br>My work uses design to raise awareness people around important topics.<br></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in-animation-block">
+        <h4 class="heading-3 ex">Exhibitions and awards</h4>
+        <a data-w-id="4e011ce2-51c1-e15c-680e-9ef4e46208c5" href="https://www.giff.ch/film/delusional-souvenirs/" target="_blank" class="contact-link w-inline-block">
+          <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="4e011ce2-51c1-e15c-680e-9ef4e46208c7" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="4e011ce2-51c1-e15c-680e-9ef4e46208c8" alt="Link Arrow" class="link-arrow _2"></div>
+          <div class="standard-text aww">GIFF festival, exhibition of the project Delusional souvenir - 2024</div>
+        </a>
+        <a data-w-id="0c7e09b8-f412-0a3e-27f4-17914e36c9ea" href="https://www.hesge.ch/head/en/project/2025-graduate-awards-master-prize-winners" target="_blank" class="contact-link w-inline-block">
+          <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="0c7e09b8-f412-0a3e-27f4-17914e36c9ec" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="0c7e09b8-f412-0a3e-27f4-17914e36c9ed" alt="Link Arrow" class="link-arrow _2"></div>
+          <div class="standard-text">HES-SO excellence award in design and visual arts, Design - 2025</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="work">
+    <div class="container">
+      <div id="w-node-_2b7fc943-fb14-71bf-f70d-15c4d0729ce2-1a6e39a8" class="about-content-block">
+        <div class="_12-column-grid">
+          <div id="w-node-_2b7fc943-fb14-71bf-f70d-15c4d0729ce4-1a6e39a8" class="about-content-wrapper">
+            <h1 class="heading-2">Work</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container projets">
+      <a href="roots.html" class="w-inline-block"><img src="images/25_DIPLOME_MD_OCEANE©StudioTropBien-3.png" loading="lazy" sizes="(max-width: 1056px) 100vw, 1056px" srcset="images/321f975b5b9cbd455d5a8ba0efba41ce_25_DIPLOME_MD_OCEANE©StudioTropBien-3-p-500.png 500w, images/321f975b5b9cbd455d5a8ba0efba41ce_25_DIPLOME_MD_OCEANE©StudioTropBien-3-p-800.png 800w, images/25_DIPLOME_MD_OCEANE©StudioTropBien-3.png 1056w" alt="" class="image"></a>
+      <a href="degrade.html" class="w-inline-block"><img src="images/degrade-archive-5.jpg" loading="lazy" sizes="(max-width: 3619px) 100vw, 3619px" srcset="images/degrade-archive-5-p-500.jpg 500w, images/degrade-archive-5-p-800.jpg 800w, images/degrade-archive-5-p-1080.jpg 1080w, images/degrade-archive-5-p-1600.jpg 1600w, images/degrade-archive-5-p-2000.jpg 2000w, images/degrade-archive-5-p-2600.jpg 2600w, images/degrade-archive-5.jpg 3619w" alt="" class="image-2"></a>
+      <a href="save-the-goblin.html" class="w-inline-block"><img src="images/save-goblin1.png" loading="lazy" sizes="(max-width: 596px) 100vw, 596px" srcset="images/save-goblin1-p-500.png 500w, images/save-goblin1.png 596w" alt="" class="image-3"></a>
+      <a href="https://delusionalsouvenirs.cc/" target="_blank" class="w-inline-block"><img src="images/delusionalsouvenirs-8.png" loading="lazy" sizes="(max-width: 816px) 100vw, 816px" srcset="images/delusionalsouvenirs-8-p-500.png 500w, images/delusionalsouvenirs-8-p-800.png 800w, images/delusionalsouvenirs-8.png 816w" alt="" class="image-4"></a>
+      <a href="battery-low.html" class="w-inline-block"><img src="images/3.png" loading="lazy" sizes="(max-width: 4557px) 100vw, 4557px" srcset="images/3-p-500.png 500w, images/3-p-800.png 800w, images/3-p-1080.png 1080w, images/3-p-1600.png 1600w, images/3-p-2000.png 2000w, images/3.png 4557w" alt="" class="image"></a>
+    </div>
+  </section>
+  <section>
+    <div class="container hero-section">
+      <a data-w-id="add689e1-78c5-7a5c-83ff-e376a65e9c57" href="https://www.linkedin.com/in/oceane-serrat" target="_blank" class="contact-link w-inline-block">
+        <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="add689e1-78c5-7a5c-83ff-e376a65e9c59" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="add689e1-78c5-7a5c-83ff-e376a65e9c5a" alt="Link Arrow" class="link-arrow _2"></div>
+        <div class="standard-text">Linkedln</div>
+      </a>
+      <a data-w-id="3c7ef942-ebed-6747-b5b1-d0c42c99148d" href="https://oceanesrt.itch.io/" target="_blank" class="contact-link w-inline-block">
+        <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="3c7ef942-ebed-6747-b5b1-d0c42c99148f" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="3c7ef942-ebed-6747-b5b1-d0c42c991490" alt="Link Arrow" class="link-arrow _2"></div>
+        <div class="standard-text">itch.io</div>
+      </a>
+      <a data-w-id="01367841-8e15-248e-4bfe-e5d38b54a559" href="mailto:oceane.srt77@gmail.com?subject=contact%20portfolio" class="contact-link w-inline-block">
+        <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="01367841-8e15-248e-4bfe-e5d38b54a55b" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="01367841-8e15-248e-4bfe-e5d38b54a55c" alt="Link Arrow" class="link-arrow _2"></div>
+        <div class="standard-text">Email</div>
+      </a>
+      <a data-w-id="f18e932f-5fef-5607-ea51-80066518f05d" href="https://github.com/oserratr" target="_blank" class="contact-link w-inline-block">
+        <div class="link-arrow-wrapper"><img src="images/link-arrow_1.svg" loading="lazy" data-w-id="f18e932f-5fef-5607-ea51-80066518f05f" alt="Link Arrow" class="link-arrow _1"><img src="images/Link-Arrow.svg" loading="lazy" data-w-id="f18e932f-5fef-5607-ea51-80066518f060" alt="Link Arrow" class="link-arrow _2"></div>
+        <div class="standard-text">Github</div>
+      </a>
+    </div>
+  </section>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=672f370123ca1f0c1a6e3978" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
 </body>
 </html>
