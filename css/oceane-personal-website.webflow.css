@@ -1462,3 +1462,13 @@ figcaption {
 }
 
 
+/* Cacher les scrollbars tout en gardant le scroll fonctionnel */
+html, body {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE/Edge Legacy */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
